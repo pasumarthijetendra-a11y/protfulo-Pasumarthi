@@ -1,0 +1,816 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jetendra Pasumarthi | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ===== RESET ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --bg:#080d1a;
+    --bg2:#111a2c;
+    --blue:#38bdf8;
+    --purple:#a78bfa;
+    --white:#ffffff;
+    --gray:#b8c4d9;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--bg);
+    color:var(--white);
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+section{
+    padding:100px 8%;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+/* ===== NAVBAR ===== */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(8,13,26,0.92);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #25314a;
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+    color:var(--blue);
+}
+
+.logo span{
+    color:var(--white);
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+.nav-links a{
+    font-size:14px;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:var(--blue);
+}
+
+.menu-btn{
+    display:none;
+    font-size:26px;
+    background:none;
+    border:none;
+    color:white;
+    cursor:pointer;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+    max-width:1200px;
+    margin:auto;
+    padding:70px 8%;
+}
+
+.hero-text{
+    flex:1;
+}
+
+.hero-text .small-title{
+    color:var(--blue);
+    font-size:18px;
+    letter-spacing:2px;
+}
+
+.hero-text h1{
+    font-size:55px;
+    font-weight:800;
+    margin:15px 0;
+    line-height:1.2;
+}
+
+.hero-text h1 span{
+    color:var(--blue);
+}
+
+.hero-text h2{
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.typing{
+    color:var(--purple);
+}
+
+.hero-text p{
+    color:var(--gray);
+    line-height:1.9;
+    max-width:600px;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.btn{
+    padding:13px 28px;
+    border-radius:30px;
+    border:2px solid var(--blue);
+    background:var(--blue);
+    color:var(--bg);
+    font-weight:600;
+    transition:0.3s;
+    display:inline-block;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 20px #38bdf855;
+}
+
+.btn-outline{
+    background:transparent;
+    color:var(--blue);
+}
+
+.btn-outline:hover{
+    background:var(--blue);
+    color:var(--bg);
+}
+
+/* ===== PROFILE ===== */
+
+.hero-image{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.profile-wrapper{
+    position:relative;
+    width:320px;
+    height:320px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.profile-wrapper::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--blue),var(--purple));
+    filter:blur(35px);
+    opacity:0.3;
+}
+
+.profile-img{
+    width:290px;
+    height:290px;
+    border-radius:50%;
+    object-fit:cover;
+    object-position:center;
+    border:5px solid var(--blue);
+    box-shadow:0 0 30px #38bdf855;
+    position:relative;
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-12px);}
+}
+
+/* ===== SECTION TITLES ===== */
+
+.section-title{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:50px;
+}
+
+.section-title span{
+    color:var(--blue);
+}
+
+/* ===== ABOUT ===== */
+
+.about{
+    background:var(--bg2);
+}
+
+.about-text{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+    color:var(--gray);
+    line-height:2;
+    font-size:16px;
+}
+
+/* ===== SKILLS ===== */
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    gap:25px;
+    max-width:900px;
+    margin:auto;
+}
+
+.skill-card{
+    padding:30px 20px;
+    text-align:center;
+    background:var(--bg2);
+    border:1px solid #263650;
+    border-radius:18px;
+    transition:0.4s;
+}
+
+.skill-card h3{
+    color:var(--blue);
+    font-size:22px;
+}
+
+.skill-card:hover{
+    transform:translateY(-10px);
+    border-color:var(--blue);
+    box-shadow:0 0 25px #38bdf822;
+}
+
+/* ===== PROJECTS ===== */
+
+.projects{
+    background:var(--bg2);
+}
+
+.project-grid{
+    max-width:800px;
+    margin:auto;
+}
+
+.project-card{
+    background:var(--bg);
+    border:1px solid #263650;
+    border-radius:20px;
+    padding:35px;
+    transition:0.4s;
+}
+
+.project-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 25px #38bdf822;
+}
+
+.project-card h3{
+    color:var(--blue);
+    font-size:25px;
+    margin-bottom:15px;
+}
+
+.project-card p{
+    color:var(--gray);
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.project-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+.project-tags span{
+    background:#1c2940;
+    color:var(--blue);
+    padding:8px 15px;
+    border-radius:20px;
+    font-size:13px;
+}
+
+/* ===== CONTACT ===== */
+
+.contact{
+    text-align:center;
+}
+
+.contact-text{
+    color:var(--gray);
+    margin-bottom:30px;
+}
+
+.socials{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:18px;
+}
+
+.socials a{
+    padding:14px 25px;
+    border:1px solid var(--blue);
+    border-radius:30px;
+    color:var(--blue);
+    transition:0.3s;
+}
+
+.socials a:hover{
+    background:var(--blue);
+    color:var(--bg);
+    transform:translateY(-5px);
+}
+
+.email{
+    margin-top:30px;
+    color:var(--gray);
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+    padding:25px;
+    text-align:center;
+    background:#050914;
+    color:var(--gray);
+    font-size:14px;
+}
+
+footer span{
+    color:var(--blue);
+}
+
+/* ===== SCROLL REVEAL ===== */
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.8s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:900px){
+
+    .hero{
+        flex-direction:column-reverse;
+        text-align:center;
+    }
+
+    .hero-text p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .buttons{
+        justify-content:center;
+    }
+
+    .hero-text h1{
+        font-size:42px;
+    }
+
+    .hero-image{
+        margin-bottom:30px;
+    }
+}
+
+@media(max-width:700px){
+
+    .menu-btn{
+        display:block;
+    }
+
+    .navbar{
+        padding:18px 6%;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:75px;
+        left:0;
+        width:100%;
+        background:var(--bg2);
+        display:flex;
+        flex-direction:column;
+        text-align:center;
+        gap:0;
+        max-height:0;
+        overflow:hidden;
+        transition:max-height 0.4s ease;
+    }
+
+    .nav-links.show{
+        max-height:350px;
+    }
+
+    .nav-links li{
+        padding:18px;
+        border-bottom:1px solid #25314a;
+    }
+
+    section{
+        padding:75px 6%;
+    }
+
+    .hero{
+        padding:60px 6%;
+    }
+
+    .hero-text h1{
+        font-size:34px;
+    }
+
+    .hero-text h2{
+        font-size:22px;
+    }
+
+    .section-title{
+        font-size:30px;
+    }
+
+    .profile-wrapper{
+        width:250px;
+        height:250px;
+    }
+
+    .profile-img{
+        width:230px;
+        height:230px;
+    }
+}
+
+@media(max-width:400px){
+    .hero-text h1{
+        font-size:29px;
+    }
+
+    .socials a{
+        width:100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <nav class="navbar">
+
+        <a href="#home" class="logo">Jetendra<span>.</span></a>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+            ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-text reveal">
+
+        <p class="small-title">WELCOME TO MY PORTFOLIO</p>
+
+        <h1>Hello, I'm <span>Jetendra</span></h1>
+
+        <h2>I'm a <span class="typing" id="typing"></span></h2>
+
+        <p>
+            I'm passionate about programming, technology and creative
+            development. I enjoy learning new skills, building projects
+            and solving problems through code. Welcome to my personal
+            portfolio website.
+        </p>
+
+        <div class="buttons">
+            <a href="#projects" class="btn">Explore Projects</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+
+    </div>
+
+    <div class="hero-image reveal">
+
+        <div class="profile-wrapper">
+
+            <img
+                src="https://drive.google.com/thumbnail?id=1RNhHZFBuf79E7SLm_js5LYYWdD9uvY43&sz=w1000"
+                alt="Jetendra Profile Photo"
+                class="profile-img"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x400/111a2c/38bdf8?text=Jetendra';">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+    <div class="container reveal">
+
+        <h2 class="section-title">About <span>Me</span></h2>
+
+        <p class="about-text">
+            I am Jetendra Pasumarthi, a passionate learner and aspiring
+            developer interested in programming and technology.
+            I have skills in C, C++, Java, Python and databases.
+            I enjoy developing creative projects, exploring new technologies
+            and improving my programming knowledge.
+            I aim to grow my technical skills and build meaningful
+            software applications.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+
+    <div class="container reveal">
+
+        <h2 class="section-title">My <span>Skills</span></h2>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <h3>C</h3>
+            </div>
+
+            <div class="skill-card">
+                <h3>C++</h3>
+            </div>
+
+            <div class="skill-card">
+                <h3>Java</h3>
+            </div>
+
+            <div class="skill-card">
+                <h3>Python</h3>
+            </div>
+
+            <div class="skill-card">
+                <h3>Database</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+
+    <div class="container reveal">
+
+        <h2 class="section-title">My <span>Projects</span></h2>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+
+                <h3>PixelStudio</h3>
+
+                <p>
+                    PixelStudio is a creative web project.
+                    Explore the project to discover its design,
+                    functionality and online experience.
+                </p>
+
+                <div class="project-tags">
+                    <span>Web Development</span>
+                    <span>Creative Design</span>
+                    <span>Website</span>
+                </div>
+
+                <a href="https://pixelstudio-flax.vercel.app/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn">
+                   Visit Project ↗
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+    <div class="container reveal">
+
+        <h2 class="section-title">Contact <span>Me</span></h2>
+
+        <p class="contact-text">
+            Let's connect! Follow me or reach out through my social profiles.
+        </p>
+
+        <div class="socials">
+
+            <a href="https://www.instagram.com/silence_jethu?bqrl=MTM3dWQzamlzczlmaQ=="
+               target="_blank"
+               rel="noopener noreferrer">
+               Instagram ↗
+            </a>
+
+            <a href="https://github.com/pasumarthijetendra-a11y"
+               target="_blank"
+               rel="noopener noreferrer">
+               GitHub ↗
+            </a>
+
+            <a href="https://www.linkedin.com/in/jetendra-pasumarthi-0497a740b?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+               target="_blank"
+               rel="noopener noreferrer">
+               LinkedIn ↗
+            </a>
+
+            <a href="mailto:pasumarthijetendra@gmail.com">
+               Email ↗
+            </a>
+
+        </div>
+
+        <p class="email">
+            <strong>Email:</strong> pasumarthijetendra@gmail.com
+        </p>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© <span id="year"></span> Jetendra Pasumarthi | Made with <span>♥</span></p>
+</footer>
+
+<script>
+
+/* ===== MOBILE MENU ===== */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click",function(){
+    navLinks.classList.toggle("show");
+
+    menuBtn.textContent = navLinks.classList.contains("show")
+        ? "✕"
+        : "☰";
+});
+
+document.querySelectorAll(".nav-links a").forEach(link=>{
+    link.addEventListener("click",()=>{
+        navLinks.classList.remove("show");
+        menuBtn.textContent = "☰";
+    });
+});
+
+/* ===== TYPING EFFECT ===== */
+
+const words = [
+    "Developer",
+    "Programmer",
+    "Tech Enthusiast"
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+const typingElement = document.getElementById("typing");
+
+function typeEffect(){
+
+    const currentWord = words[wordIndex];
+
+    if(!deleting){
+        typingElement.textContent =
+            currentWord.substring(0,charIndex+1);
+
+        charIndex++;
+
+        if(charIndex === currentWord.length){
+            deleting = true;
+            setTimeout(typeEffect,1200);
+            return;
+        }
+
+    }else{
+
+        typingElement.textContent =
+            currentWord.substring(0,charIndex-1);
+
+        charIndex--;
+
+        if(charIndex === 0){
+            deleting = false;
+            wordIndex = (wordIndex+1)%words.length;
+        }
+    }
+
+    setTimeout(typeEffect,deleting ? 60 : 120);
+}
+
+typeEffect();
+
+/* ===== SCROLL REVEAL ===== */
+
+function revealElements(){
+
+    const elements = document.querySelectorAll(".reveal");
+
+    elements.forEach(element=>{
+
+        const position = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if(position < windowHeight - 100){
+            element.classList.add("active");
+        }
+    });
+}
+
+window.addEventListener("scroll",revealElements);
+window.addEventListener("load",revealElements);
+
+/* ===== FOOTER YEAR ===== */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
